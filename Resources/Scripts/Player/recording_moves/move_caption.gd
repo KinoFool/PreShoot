@@ -16,14 +16,3 @@ func record_moves(stock_moves):
 		stock_moves[0].append(round(Timer * 1000) / 1000)
 		stock_moves[1].append(key)
 		return stock_moves
-
-func recording_time():
-	stock_moves = record_moves(stock_moves)
-	Timer += 1 * delta
-	if Input.is_action_just_pressed("ui_accept"):
-		Timer = stock_moves[0][0]
-		status = "false"
-		print ("Play mode activé !")
-		print (stock_moves)
-	# manage_view()
-	return stock_moves

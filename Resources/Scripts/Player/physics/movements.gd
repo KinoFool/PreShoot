@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var puissance_saut = -600
+export var vitesse = 200
 
 func move_in_ x(current_key):
     if current_key == "right":
