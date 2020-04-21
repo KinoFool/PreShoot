@@ -24,10 +24,7 @@ func move_in_x(current_key):
 func move_in_y(current_key):
 	print(is_on_floor())
 	if current_key == "up" and is_on_floor() == true:
-		print("PUTAIN")
-		return puissance_saut
-	else:
-		return motion.y
+		motion.y = puissance_saut
 
 func do_jump():
 	if motion.y < 2:
@@ -50,9 +47,7 @@ func run_gestion():
 	elif motion.x < 0:
 		$Sprite.flip_h = true
 		$Sprite.play("run")
-	elif status == "end":
-		$Sprite.play("stopped")
-	else:
+	elif status == "end" and motion.x == 0:
 		$Sprite.play("dead")
 
 func reload_scene(fall):
@@ -63,6 +58,8 @@ func _physics_process(delta):
 	check_sequence(status, delta)
 	animation()
 	gravity()
+	if motion.y == -600:
+		print("Saut")
 	move_and_slide(motion, UP)
 	reload_scene(motion.y)
 
@@ -91,13 +88,13 @@ func play_moves():
 	if round(Timer * 1000) / 1000 >= stock_moves[0][x_time]:
 		printt(stock_moves[0][x_time], stock_moves[1][x_time])
 		motion.x += move_in_x(stock_moves[1][x_time])
-		motion.y = move_in_y(stock_moves[1][x_time])
+		move_in_y(stock_moves[1][x_time])
 		x_time += 1
 
 func gravity():
 	if is_on_floor() == false:
 		motion.y += gravity
-	elif motion.y < 20:
+	elif motion.y > 20:
 		motion.y = 20
 
 
@@ -110,6 +107,7 @@ func check_status():
 
 func check_sequence(status, delta):
 	if status == "recording":
+		$Sprite.play("stopped")
 		recording_time(delta)
 		check_status()
 	elif status == "play":
