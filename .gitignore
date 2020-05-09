@@ -1,3 +1,4 @@
+.gitignore
 .import/
 *.import
 export.cfg
