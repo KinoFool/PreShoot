@@ -124,3 +124,14 @@ func animation():
 	if jump_gestion() == true:
 		return
 	run_gestion()
+	
+func checkpoint_past():
+	var x = len(stock_moves[0]) - 1
+	status = "recording"
+	while x >= 0:
+		stock_moves[0].remove(x)
+		stock_moves[1].remove(x)
+		x -= 1
+	Timer = 0
+	move_and_slide(motion, UP)
+	print("C'est Ok")
