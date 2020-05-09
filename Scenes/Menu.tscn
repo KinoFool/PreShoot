@@ -9,7 +9,7 @@
 [ext_resource path="res://Resources/Menu/rocks_3.png" type="Texture" id=7]
 [ext_resource path="res://Resources/Menu/clouds_1.png" type="Texture" id=8]
 [ext_resource path="res://Resources/Menu/logo.png" type="Texture" id=9]
-[ext_resource path="res://Scripts/CameraParallax.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/Menu/CameraParallax.gd" type="Script" id=10]
 [ext_resource path="res://Resources/Menu/orange_button_play.png" type="Texture" id=11]
 [ext_resource path="res://Resources/Menu/grey_button_play.png" type="Texture" id=12]
 [ext_resource path="res://Resources/Menu/orange_button_levels.png" type="Texture" id=13]
@@ -18,7 +18,7 @@
 [ext_resource path="res://Resources/Menu/orange_button_exit.png" type="Texture" id=16]
 [ext_resource path="res://Resources/Menu/music_on.png" type="Texture" id=17]
 [ext_resource path="res://Resources/Menu/music_off.png" type="Texture" id=18]
-[ext_resource path="res://Scripts/ExitButton.gd" type="Script" id=19]
+[ext_resource path="res://Scripts/Menu/ExitButton.gd" type="Script" id=19]
 [ext_resource path="res://Resources/Menu/MusicMenu_1.ogg" type="AudioStream" id=20]
 
 [node name="Menu" type="CanvasLayer"]
