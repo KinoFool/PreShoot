@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Maps/src/crate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Tileset/Wood/png/BG/BG.png" type="Texture" id=2]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 1520, 376 )
+scale = Vector2( 1.01727, 1.01954 )
+texture = ExtResource( 2 )
+
+[node name="BG2" type="Sprite" parent="."]
+position = Vector2( 504, 376 )
+scale = Vector2( 1.01727, 1.01954 )
+texture = ExtResource( 2 )
+
+[node name="Creates" type="Node2D" parent="."]
+
+[node name="crate" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 39, 474 )
+
+[node name="crate2" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 116, 551 )
+
+[node name="crate3" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 193, 551 )
+
+[node name="crate4" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 390, 474 )
+
+[node name="crate5" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 352, 551 )
+
+[node name="crate6" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 428, 551 )
+
+[node name="crate7" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 609, 551 )
+
+[node name="crate8" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 685.162, 551 )
+
+[node name="crate9" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 762, 551 )
+
+[node name="crate10" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 934, 551 )
+
+[node name="crate11" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1011, 551 )
+
+[node name="crate12" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1088, 551 )
+
+[node name="crate21" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1351, 512 )
+
+[node name="crate24" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1427, 512 )
+
+[node name="crate25" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1427, 589 )
+
+[node name="crate26" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1427, 665 )
+
+[node name="crate27" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1503, 665 )
+
+[node name="crate28" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1579, 665 )
+
+[node name="crate29" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1655, 665 )
+
+[node name="crate30" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1655, 589 )
+
+[node name="crate31" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1655, 512 )
+
+[node name="crate32" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1732, 512 )
+
+[node name="crate23" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 934, 474 )
+
+[node name="crate15" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1088, 474 )
+
+[node name="crate16" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1088, 399 )
+
+[node name="crate17" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1088, 322 )
+
+[node name="crate13" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1011, 474 )
+
+[node name="crate14" parent="Creates" instance=ExtResource( 1 )]
+position = Vector2( 1011, 399 )
