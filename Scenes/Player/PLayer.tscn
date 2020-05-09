@@ -82,11 +82,6 @@ height = 38.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 20 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 35 ), ExtResource( 23 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "Run",
@@ -120,6 +115,11 @@ animations = [ {
 "frames": [ ExtResource( 49 ), ExtResource( 22 ), ExtResource( 70 ), ExtResource( 18 ), ExtResource( 69 ), ExtResource( 71 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 75 ) ],
 "loop": true,
 "name": "Hurt",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 20.0
 } ]
 
