@@ -12,7 +12,7 @@ scale = Vector2( 1.01727, 1.01954 )
 texture = ExtResource( 2 )
 
 [node name="BG2" type="Sprite" parent="."]
-position = Vector2( 504, 376 )
+position = Vector2( 504, 377.507 )
 scale = Vector2( 1.01727, 1.01954 )
 texture = ExtResource( 2 )
 
@@ -104,3 +104,11 @@ position = Vector2( 1011, 399 )
 
 [node name="Sprite" parent="." instance=ExtResource( 3 )]
 position = Vector2( 122, 452 )
+
+[node name="Camera2D" type="Camera2D" parent="Sprite"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 2000
+limit_bottom = 710
+editor_draw_limits = true
