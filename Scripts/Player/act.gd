@@ -27,11 +27,10 @@ func move_in_y(current_key):
 		motion.y = puissance_saut
 
 func do_jump():
-	pass
-#	if motion.y < 2:
-#		$Sprite.play("jump")
-#	if motion.y > -2:
-#		$Sprite.play("fall")
+	if motion.y < 2:
+		$Sprite.play("Jump")
+	if motion.y > -2:
+		$Sprite.play("Fall")
 
 func jump_gestion():
 	if is_on_wall() == true:
@@ -42,15 +41,14 @@ func jump_gestion():
 	return false
 
 func run_gestion():
-	pass
-#	if motion.x > 0:
-#		$Sprite.flip_h = false
-#		$Sprite.play("run")
-#	elif motion.x < 0:
-#		$Sprite.flip_h = true
-#		$Sprite.play("run")
-#	elif status == "end" and motion.x == 0:
-#		$Sprite.play("dead")
+	if motion.x > 0:
+		$Sprite.flip_h = false
+		$Sprite.play("Run")
+	elif motion.x < 0:
+		$Sprite.flip_h = true
+		$Sprite.play("Run")
+	elif status == "end" and motion.x == 0:
+		$Sprite.play("Dead")
 
 func reload_scene(fall):
 	if Input.is_action_just_pressed("ui_reload") or fall > 2000:
@@ -75,7 +73,7 @@ func a_move():
 	return "none"
 
 func record_moves():
-#	$Sprite.play("stopped")
+	$Sprite.play("Idle")
 	var key = a_move()
 	if key != "none":
 		stock_moves[0].append(round(Timer * 1000) / 1000)
@@ -109,7 +107,7 @@ func check_status():
 
 func check_sequence(status, delta):
 	if status == "recording":
-#		$Sprite.play("stopped")
+		$Sprite.play("Idle")
 		recording_time(delta)
 		check_status()
 	elif status == "play":
