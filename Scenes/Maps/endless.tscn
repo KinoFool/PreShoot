@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Maps/src/crate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/PLayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Maps/CP Block.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Maps/Camera2D.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -38,6 +39,9 @@ position = Vector2( 847, 462 )
 [node name="crate14" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 924, 462 )
 
+[node name="crate15" parent="Main blocks" instance=ExtResource( 1 )]
+position = Vector2( 1001, 462 )
+
 [node name="crate4" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 154, 462 )
 
@@ -50,24 +54,17 @@ position = Vector2( 154, 308 )
 [node name="crate7" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 154, 231 )
 
-[node name="crate15" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 385, 231 )
-
-[node name="crate17" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 693, 231 )
-
-[node name="crate18" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 847, 231 )
-
-[node name="crate16" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 1078, 308 )
-
 [node name="Generation" type="Node2D" parent="."]
 
 [node name="CP" parent="Generation" instance=ExtResource( 3 )]
-position = Vector2( 847, 396 )
+position = Vector2( 962.5, 396 )
 player_node = NodePath("../../Dog")
 checkpoint_node = NodePath("../CP")
 
 [node name="Dog" parent="." instance=ExtResource( 2 )]
 position = Vector2( 268, 364 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 616, 385 )
+current = true
+script = ExtResource( 4 )

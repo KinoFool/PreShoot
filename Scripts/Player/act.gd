@@ -22,7 +22,6 @@ func move_in_x(current_key):
 		return (0)
 
 func move_in_y(current_key):
-	print(is_on_floor())
 	if current_key == "up" and is_on_floor() == true:
 		motion.y = puissance_saut
 
@@ -128,10 +127,10 @@ func animation():
 func checkpoint_past():
 	var x = len(stock_moves[0]) - 1
 	status = "recording"
+	x_time = 0
 	while x >= 0:
 		stock_moves[0].remove(x)
 		stock_moves[1].remove(x)
 		x -= 1
 	Timer = 0
 	move_and_slide(motion, UP)
-	print("C'est Ok")
