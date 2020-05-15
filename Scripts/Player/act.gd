@@ -57,8 +57,6 @@ func _physics_process(delta):
 	check_sequence(status, delta)
 	animation()
 	gravity()
-	if motion.y == -600:
-		print("Saut")
 	move_and_slide(motion, UP)
 	reload_scene(motion.y)
 
@@ -80,12 +78,9 @@ func record_moves():
 
 func play_moves():
 	if x_time == len(stock_moves[0]) or len(stock_moves[0]) == 0:
-		print("FIN!!")
 		status = "end"
 		return
-	print(x_time)
 	if round(Timer * 1000) / 1000 >= stock_moves[0][x_time]:
-		printt(stock_moves[0][x_time], stock_moves[1][x_time])
 		motion.x += move_in_x(stock_moves[1][x_time])
 		move_in_y(stock_moves[1][x_time])
 		x_time += 1
@@ -100,8 +95,6 @@ func gravity():
 func check_status():
 	if Input.is_action_just_pressed("ui_accept"):
 		Timer = stock_moves[0][0]
-		print ("Play mode activé !")
-		print (stock_moves)
 		status = "play"
 
 func check_sequence(status, delta):

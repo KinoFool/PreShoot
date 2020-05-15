@@ -8,14 +8,14 @@ var rand = RandomNumberGenerator.new()
 var current = 2
 var player
 var checkpoint
-var checkpoint_margin = Vector2(600, 0)
+var checkpoint_margin = Vector2(616, 0)
 
 func _ready():
 	player = get_node(player_node)
 	checkpoint = get_node(checkpoint_node)
 	connect("body_entered", self, "maybe_player_entered")
 	
-func random_position():
+func random_direction():
 	rand.randomize()
 	var nb = rand.randi_range(0, 7)
 	while nb < current - 1 or nb > current + 1:
@@ -27,27 +27,53 @@ func random_position():
 func tp_checkpoint(way):
 	checkpoint.position -= checkpoint_margin
 	checkpoint.position += camera.trans_way(way) * 2
-	checkpoint_margin = camera.trans_way(way) * 1
+	checkpoint_margin += camera.trans_way(way) * 1
 	
+func end_blocks(way, new):
+	var block1 = new.instance()
+	var block2 = new.instance()
+	var pos1 = Vector2()
+	var pos2 = Vector2()
+	get_parent().add_child(block1)
+	get_parent().add_child(block2)
+	if way == 0 or way == 4:
+		pos1.x = 6 * 77
+		pos2.x = 7 * 77
+	if way == 1 or way == 2 or way == 3:
+		pos1.x = 12 * 77
+		pos2.x = 13 * 77
+	if way == 5 or way == 6 or way == 7:
+		pos1.x = 2 * 77
+		pos2.x = 3 * 77
+	if way == 2 or way == 6:
+		pos1.y = 6 * 77
+	if way == 0 or way == 1 or way == 7:
+		pos1.y = 3 * 77
+	if way == 3 or way == 4 or way == 5:
+		pos1.y = 9 * 77
+	pos2.y = pos1.y
+	print("Position sur l'actuelle carte : ", pos1)
+	block1.position = checkpoint_margin + pos1
+	block2.position = checkpoint_margin + pos2
+	print("Position globale du bloc : ", block1.position)
+	print("Position globale de la camera : ", checkpoint_margin)
+
 func generate_newblocks(way):
 	var new = load("res://Scenes/Maps/src/crate.tscn")
 	var block
-#	var places = []
 	rand.randomize()
-	for i in range(0, 9):
-		block = new.instance()
-		get_parent().add_child(block)
-		block.position = checkpoint_margin + Vector2(rand.randi_range(1, 9) * 77, rand.randi_range(1, 5) * 77)
-		
+#	for i in range(0, 9):
+#		block = new.instance()
+#		get_parent().add_child(block)
+#		block.position = checkpoint_margin + Vector2(rand.randi_range(2, 12) * 77, rand.randi_range(3, 10) * 77)
+	end_blocks(way, new)
 
 func next_step():
-	var way = random_position()
+	var way = random_direction()
+	print("Way = ", way)
 	camera.change_camera(way)
 	tp_checkpoint(way)
 	generate_newblocks(way)
-#	get_parent().add_child(block)
-#	print(block.global_position)
-#	block.global_position = Vector2(100, 100)
 	
 
 func maybe_player_entered(item):
