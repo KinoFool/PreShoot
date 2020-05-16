@@ -27,7 +27,7 @@ func random_direction():
 func tp_checkpoint(way):
 	checkpoint.position -= checkpoint_margin
 	checkpoint.position += camera.trans_way(way) * 2
-	checkpoint_margin += camera.trans_way(way) * 1
+	checkpoint_margin = camera.trans_way(way)
 	
 func end_blocks(way, new):
 	var block1 = new.instance()
@@ -40,23 +40,20 @@ func end_blocks(way, new):
 		pos1.x = 6 * 77
 		pos2.x = 7 * 77
 	if way == 1 or way == 2 or way == 3:
-		pos1.x = 12 * 77
-		pos2.x = 13 * 77
+		pos1.x = 11 * 77
+		pos2.x = 12 * 77
 	if way == 5 or way == 6 or way == 7:
 		pos1.x = 2 * 77
 		pos2.x = 3 * 77
 	if way == 2 or way == 6:
-		pos1.y = 6 * 77
+		pos1.y = 5 * 77
 	if way == 0 or way == 1 or way == 7:
-		pos1.y = 3 * 77
+		pos1.y = 2 * 77
 	if way == 3 or way == 4 or way == 5:
-		pos1.y = 9 * 77
+		pos1.y = 8 * 77
 	pos2.y = pos1.y
-	print("Position sur l'actuelle carte : ", pos1)
-	block1.position = checkpoint_margin + pos1
-	block2.position = checkpoint_margin + pos2
-	print("Position globale du bloc : ", block1.position)
-	print("Position globale de la camera : ", checkpoint_margin)
+	block1.position = camera.position + pos1
+	block2.position = camera.position + pos2
 
 func generate_newblocks(way):
 	var new = load("res://Scenes/Maps/src/crate.tscn")

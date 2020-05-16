@@ -65,6 +65,7 @@ checkpoint_node = NodePath("../CP")
 position = Vector2( 268, 364 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 616, 385 )
+position = Vector2( 77, 77 )
+anchor_mode = 0
 current = true
 script = ExtResource( 4 )
