@@ -37,14 +37,14 @@ func end_blocks(way, new):
 	get_parent().add_child(block1)
 	get_parent().add_child(block2)
 	if way == 0 or way == 4:
-		pos1.x = 6 * 77
-		pos2.x = 7 * 77
+		pos1.x = 7 * 77
+		pos2.x = 8 * 77
 	if way == 1 or way == 2 or way == 3:
 		pos1.x = 11 * 77
 		pos2.x = 12 * 77
 	if way == 5 or way == 6 or way == 7:
-		pos1.x = 2 * 77
-		pos2.x = 3 * 77
+		pos1.x = 3 * 77
+		pos2.x = 4 * 77
 	if way == 2 or way == 6:
 		pos1.y = 5 * 77
 	if way == 0 or way == 1 or way == 7:
@@ -57,12 +57,17 @@ func end_blocks(way, new):
 
 func generate_newblocks(way):
 	var new = load("res://Scenes/Maps/src/crate.tscn")
+	var tmp = 0
 	var block
 	rand.randomize()
-#	for i in range(0, 9):
-#		block = new.instance()
-#		get_parent().add_child(block)
-#		block.position = checkpoint_margin + Vector2(rand.randi_range(2, 12) * 77, rand.randi_range(3, 10) * 77)
+	for i in range(2, 7):
+		block = new.instance()
+		get_parent().add_child(block)
+		var curr = rand.randi_range(3, 10)
+		while tmp < curr + 1 and tmp > curr - 1:
+			curr = rand.randi_range(3, 10)
+		tmp = curr
+		block.position = camera.position + Vector2(curr * 77, i * 77)
 	end_blocks(way, new)
 
 func next_step():
