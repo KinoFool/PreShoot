@@ -1,20 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Maps/src/crate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/PLayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Maps/CP Block.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Maps/Camera2D.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Maps/Patterns.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Maps/Lives.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Maps/endless.tres" type="Animation" id=7]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Main blocks" type="Node2D" parent="."]
 
 [node name="crate" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 231, 462 )
+position = Vector2( 231, 770 )
 
 [node name="crate2" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 308, 462 )
+position = Vector2( 308, 770 )
 
 [node name="crate3" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 385, 462 )
@@ -47,10 +49,10 @@ position = Vector2( 1001, 462 )
 position = Vector2( 154, 462 )
 
 [node name="crate54" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 231, 539 )
+position = Vector2( 231, 847 )
 
 [node name="crate53" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 308, 539 )
+position = Vector2( 308, 847 )
 
 [node name="crate52" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 385, 539 )
@@ -83,10 +85,10 @@ position = Vector2( 1001, 539 )
 position = Vector2( 154, 539 )
 
 [node name="crate67" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 231, 616 )
+position = Vector2( 231, 924 )
 
 [node name="crate66" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 308, 616 )
+position = Vector2( 308, 924 )
 
 [node name="crate65" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 385, 616 )
@@ -119,10 +121,10 @@ position = Vector2( 1001, 616 )
 position = Vector2( 154, 616 )
 
 [node name="crate80" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 231, 693 )
+position = Vector2( 231, 1001 )
 
 [node name="crate79" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 308, 693 )
+position = Vector2( 308, 1001 )
 
 [node name="crate78" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 385, 693 )
@@ -259,6 +261,10 @@ position = Vector2( 616, 77 )
 [node name="crate84" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 693, 77 )
 
+[node name="intro" type="AnimationPlayer" parent="Main blocks"]
+autoplay = "intro_endless"
+anims/intro_endless = ExtResource( 7 )
+
 [node name="Generation" type="Node2D" parent="."]
 
 [node name="CP" parent="Generation" instance=ExtResource( 3 )]
@@ -270,7 +276,11 @@ checkpoint_node = NodePath("../CP")
 script = ExtResource( 5 )
 
 [node name="Dog" parent="." instance=ExtResource( 2 )]
-position = Vector2( 268, 364 )
+position = Vector2( 269.414, 673.108 )
+
+[node name="Lives" type="Node2D" parent="Dog"]
+position = Vector2( -270.3, -658.925 )
+script = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 77, 77 )

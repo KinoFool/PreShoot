@@ -1,5 +1,8 @@
 extends Camera2D
 
+onready var zone = [1, 0, 0]
+
+
 func trans_way(way):
 	if way == 0:
 		return Vector2(308, -231)
@@ -20,3 +23,10 @@ func trans_way(way):
 
 func change_camera(way):
 	self.position += trans_way(way)
+	if way == 1:
+		zone[0] += 1
+		zone[1] += 1
+	if way == 2: zone[0] += 1
+	if way == 3:
+		zone[0] += 1
+		zone[2] += 1

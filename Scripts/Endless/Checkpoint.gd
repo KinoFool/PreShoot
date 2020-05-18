@@ -10,6 +10,7 @@ var current = 2
 var player
 var checkpoint
 var checkpoint_margin = Vector2(616, 0)
+var player_position
 
 func _ready():
 	player = get_node(player_node)
@@ -76,3 +77,4 @@ func maybe_player_entered(item):
 		player_func.motion.x = 0
 		player_func.motion.y = 0
 		player_func.checkpoint_past()
+		player_position = player.position

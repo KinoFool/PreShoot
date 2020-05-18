@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var lives = get_node("Lives")
+
 var motion = Vector2()
 var status = "recording"
 var stock_moves = [[], []]
@@ -51,7 +53,7 @@ func run_gestion():
 
 func reload_scene(fall):
 	if Input.is_action_just_pressed("ui_reload") or fall > 2000:
-		get_tree().reload_current_scene()
+		lives.death()
 
 func _physics_process(delta):
 	check_sequence(status, delta)
