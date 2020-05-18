@@ -4,6 +4,7 @@ export(NodePath) var player_node
 export(NodePath) var checkpoint_node
 onready var player_func = get_parent().get_parent().get_node("Dog")
 onready var camera = get_parent().get_parent().get_node("Camera2D")
+onready var pattern = get_node("Patterns")
 var rand = RandomNumberGenerator.new()
 var current = 2
 var player
@@ -29,7 +30,8 @@ func tp_checkpoint(way):
 	checkpoint.position += camera.trans_way(way) * 2
 	checkpoint_margin = camera.trans_way(way)
 	
-func end_blocks(way, new):
+func end_blocks(way):
+	var new = load("res://Scenes/Maps/src/crate.tscn")
 	var block1 = new.instance()
 	var block2 = new.instance()
 	var pos1 = Vector2()
@@ -56,22 +58,12 @@ func end_blocks(way, new):
 	block2.position = camera.position + pos2
 
 func generate_newblocks(way):
-	var new = load("res://Scenes/Maps/src/crate.tscn")
-	var tmp = 0
-	var block
-	rand.randomize()
-	for i in range(2, 7):
-		block = new.instance()
-		get_parent().add_child(block)
-		var curr = rand.randi_range(3, 10)
-		while tmp < curr + 1 and tmp > curr - 1:
-			curr = rand.randi_range(3, 10)
-		tmp = curr
-		block.position = camera.position + Vector2(curr * 77, i * 77)
-	end_blocks(way, new)
+	pattern.pattern_gestion(camera.position)
+	end_blocks(way)
 
 func next_step():
 	var way = random_direction()
+	way = 2
 	print("Way = ", way)
 	camera.change_camera(way)
 	tp_checkpoint(way)
