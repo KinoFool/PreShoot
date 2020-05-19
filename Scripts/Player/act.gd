@@ -7,10 +7,10 @@ var status = "recording"
 var stock_moves = [[], []]
 var Timer = 0
 var x_time = 0
-
-export var gravity = 20
+var game_type = "level"
 
 const UP = Vector2(0, -1)
+export var gravity = 20
 export var puissance_saut = -600
 export var vitesse = 200
 
@@ -53,7 +53,14 @@ func run_gestion():
 
 func reload_scene(fall):
 	if Input.is_action_just_pressed("ui_reload") or fall > 2000:
-		lives.death()
+		if game_type == "endless":
+			if lives.live > 0:
+				lives.death()
+			else:
+				lives.live = 3
+				get_tree().reload_current_scene()
+		else:
+			get_tree().reload_current_scene()
 
 func _physics_process(delta):
 	check_sequence(status, delta)
@@ -129,3 +136,6 @@ func checkpoint_past():
 		x -= 1
 	Timer = 0
 	move_and_slide(motion, UP)
+
+func course_animation():
+	$Sprite.play("Run")

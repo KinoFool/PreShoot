@@ -2,9 +2,11 @@ extends Area2D
 
 export(NodePath) var player_node
 export(NodePath) var checkpoint_node
+
 onready var player_func = get_parent().get_parent().get_node("Dog")
 onready var camera = get_parent().get_parent().get_node("Camera2D")
 onready var pattern = get_node("Patterns")
+
 var rand = RandomNumberGenerator.new()
 var current = 2
 var player
@@ -13,17 +15,14 @@ var checkpoint_margin = Vector2(616, 0)
 var player_position
 
 func _ready():
+	player_func.game_type = "endless"
 	player = get_node(player_node)
 	checkpoint = get_node(checkpoint_node)
 	connect("body_entered", self, "maybe_player_entered")
 	
 func random_direction():
 	rand.randomize()
-	var nb = rand.randi_range(0, 7)
-	while nb < current - 1 or nb > current + 1:
-		nb = current
-		nb += rand.randi_range(-1, 1)
-	current = nb
+	var nb = rand.randi_range(1, 1)
 	return nb
 	
 func tp_checkpoint(way):
@@ -59,12 +58,11 @@ func end_blocks(way):
 	block2.position = camera.position + pos2
 
 func generate_newblocks(way):
-	pattern.pattern_gestion(camera.position)
+	pattern.pattern_gestion(camera.position, way)
 	end_blocks(way)
 
 func next_step():
 	var way = random_direction()
-	way = 2
 	print("Way = ", way)
 	camera.change_camera(way)
 	tp_checkpoint(way)

@@ -35,7 +35,6 @@ func pat21():
 	create_on(12, 7)
 	create_on(11, 8)
 	create_on(12, 8)
-	
 func pat22():
 	create_on(7, 6)
 	create_on(8, 6)
@@ -67,7 +66,6 @@ func pat22():
 	create_on(12, 7)
 	create_on(11, 8)
 	create_on(12, 8)
-	
 func pat23():
 	create_on(5, 8)
 	create_on(6, 8)
@@ -87,7 +85,7 @@ func pat23():
 	create_on(7, 4)
 	create_on(7, 5)
 	#2
-	for x in range(3, 11):
+	for x in range(3, 10):
 		for y in range(0, 3):
 			create_on(x, y)
 	
@@ -98,8 +96,23 @@ func pat23():
 	create_on(12, 7)
 	create_on(11, 8)
 	create_on(12, 8)
-	
 func pat24():
+	#Pilliers
+	#2
+	create_on(3, 6)
+	create_on(4, 6)
+	create_on(3, 7)
+	create_on(4, 7)
+	create_on(3, 8)
+	create_on(4, 8)
+	#3
+	create_on(11, 6)
+	create_on(12, 6)
+	create_on(11, 7)
+	create_on(12, 7)
+	create_on(11, 8)
+	create_on(12, 8)
+func pat25():
 	
 	create_on(5, 4)
 	create_on(6, 4)
@@ -131,8 +144,7 @@ func pat24():
 	create_on(12, 7)
 	create_on(11, 8)
 	create_on(12, 8)
-
-func pat25():
+func pat26():
 	create_on(1, 3)
 	create_on(2, 3)
 	create_on(5, 2)
@@ -156,16 +168,38 @@ func pat25():
 	create_on(11, 8)
 	create_on(12, 8)
 
-func find_path(i):
-#	i = 5
+func pat11():
+	for i in range(5, 13):
+		create_on(i, 8)
+	create_on(10, 7)
+	create_on(11, 7)
+
+	create_on(6, 5)
+	create_on(7, 5)
+
+	create_on(3, 3)
+	create_on(4, 3)
+
+func select_pat1(i):
+	if i == 1: pat11()
+	
+
+func select_pat2(i):
 	if i == 1: pat21()
 	if i == 2: pat22()
 	if i == 3: pat23()
 	if i == 4: pat24()
 	if i == 5: pat25()
+	if i == 6: pat26()
+
+
+func find_path(i, j):
+	if j == 1: select_pat1(i)
+	if j == 2: select_pat2(i)
 	print("Pattern number ", i)
 
-func pattern_gestion(cam_pos):
+
+func pattern_gestion(cam_pos, way):
 	cam = cam_pos
 	rand.randomize()
-	find_path(rand.randi_range(1, 5))
+	find_path(rand.randi_range(1, 1), way)
