@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Maps/src/crate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/PLayer.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Scenes/Maps/Label.gd" type="Script" id=8]
 [ext_resource path="res://Resources/Music/Preshoot_level_1.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Scenes/Maps/Level_music.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Maps/New_score.gd" type="Script" id=11]
+[ext_resource path="res://Resources/Music/Preshoot_level_clear.ogg" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Resources/Text_fonts/Lalezar-Regular.ttf"
@@ -23,10 +25,10 @@ font_data = SubResource( 1 )
 [node name="Main blocks" type="Node2D" parent="."]
 
 [node name="crate" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 231, 808.5 )
+position = Vector2( 231, 847 )
 
 [node name="crate2" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 308, 808.5 )
+position = Vector2( 308, 847 )
 
 [node name="crate3" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 385, 462 )
@@ -59,10 +61,10 @@ position = Vector2( 1001, 462 )
 position = Vector2( 154, 462 )
 
 [node name="crate54" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 231, 885.5 )
+position = Vector2( 231, 924 )
 
 [node name="crate53" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 308, 885.5 )
+position = Vector2( 308, 924 )
 
 [node name="crate52" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 385, 539 )
@@ -95,10 +97,10 @@ position = Vector2( 1001, 539 )
 position = Vector2( 154, 539 )
 
 [node name="crate67" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 231, 962.5 )
+position = Vector2( 231, 1001 )
 
 [node name="crate66" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 308, 962.5 )
+position = Vector2( 308, 1001 )
 
 [node name="crate65" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 385, 616 )
@@ -131,10 +133,10 @@ position = Vector2( 1001, 616 )
 position = Vector2( 154, 616 )
 
 [node name="crate80" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 231, 1039.5 )
+position = Vector2( 231, 1078 )
 
 [node name="crate79" parent="Main blocks" instance=ExtResource( 1 )]
-position = Vector2( 308, 1039.5 )
+position = Vector2( 308, 1078 )
 
 [node name="crate78" parent="Main blocks" instance=ExtResource( 1 )]
 position = Vector2( 385, 693 )
@@ -286,7 +288,7 @@ checkpoint_node = NodePath("../CP")
 script = ExtResource( 5 )
 
 [node name="Dog" parent="." instance=ExtResource( 2 )]
-position = Vector2( 269.403, 711.168 )
+position = Vector2( 269.392, 749.228 )
 
 [node name="Lives" type="Node2D" parent="Dog"]
 position = Vector2( -270.3, -658.925 )
@@ -296,14 +298,15 @@ script = ExtResource( 6 )
 position = Vector2( 77, 77 )
 anchor_mode = 0
 current = true
+zoom = Vector2( 0, 0 )
 script = ExtResource( 4 )
 
 [node name="Shoots" type="Label" parent="Camera2D"]
 anchor_right = 0.591
 margin_left = 823.0
-margin_top = 19.0
+margin_top = 20.0
 margin_right = 969.0
-margin_bottom = 91.0
+margin_bottom = 92.0
 custom_fonts/font = SubResource( 2 )
 valign = 1
 script = ExtResource( 8 )
@@ -322,3 +325,9 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="New_score" type="AudioStreamPlayer" parent="Camera2D"]
+stream = ExtResource( 12 )
+mix_target = 2
+bus = "SFX"
+script = ExtResource( 11 )

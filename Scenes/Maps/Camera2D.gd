@@ -1,7 +1,7 @@
 extends Camera2D
 
+onready var pattern = get_parent().get_node("Generation/CP/Patterns")
 onready var zone = [1, 0, 0]
-
 onready var times = 0
 
 func trans_way(way):
@@ -18,7 +18,7 @@ func change_camera(way):
 	times += 1
 	print(times)
 	self.position += trans_way(way)
-	if times >= 2: self.position.y += trans_way(way).y
+	if times >= 2 and way != 2: self.position.y += trans_way(way).y
 	if way == 1:
 		zone[0] += 1
 		zone[1] += 1
@@ -26,3 +26,5 @@ func change_camera(way):
 	if way == 3:
 		zone[0] += 1
 		zone[2] += 1
+	if zone[0] % 5 == 0:
+		pattern.difficult += 1
