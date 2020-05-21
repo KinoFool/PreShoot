@@ -22,11 +22,14 @@ func death():
 	var p_check = get_parent().get_parent().get_node("Generation/CP").player_position
 	live -= 1
 	if live == 0:
+		player.status = "end"
 		game_over()
 		return
-	player.position = p_check
-	player.status = "recording"
 	player.stock_moves[0].clear()
 	player.stock_moves[1].clear()
+	player.position = p_check
+	player.move_and_slide(Vector2(0, 0))
 	player.x_time = 0
+	player.status = "recording"
+	player.Timer = 0
 	print(live)

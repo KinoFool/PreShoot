@@ -169,8 +169,34 @@ func pat26():
 	create_on(12, 8)
 
 func pat11():
+	create_on(4, 8)
+	create_on(5, 7)
+	create_on(6, 6)
+	create_on(7, 5)
+	create_on(8, 4)
+	create_on(9, 3)
+	create_on(10, 2)
+
+func pat12():
+	create_on(4, 7)
+	create_on(5, 7)
+	create_on(6, 5)
+	create_on(7, 5)
+	create_on(8, 3)
+	create_on(9, 3)
+	create_on(10, 2)
+	
+func pat13():
+	create_on(9, 6)
+	create_on(10, 6)
+	create_on(3, 4)
+	create_on(4, 4)
+
+func pat14():
 	for i in range(5, 13):
 		create_on(i, 8)
+	for i in range(3, 8):
+		create_on(12, i)
 	create_on(10, 7)
 	create_on(11, 7)
 
@@ -179,9 +205,17 @@ func pat11():
 
 	create_on(3, 3)
 	create_on(4, 3)
+	
+	create_on(2, 0)
+	create_on(2, 1)
+	create_on(2, 2)
+	create_on(2, 3)
 
 func select_pat1(i):
 	if i == 1: pat11()
+	if i == 2: pat12()
+	if i == 3: pat13()
+	if i == 4: pat14()
 	
 
 func select_pat2(i):
@@ -202,4 +236,4 @@ func find_path(i, j):
 func pattern_gestion(cam_pos, way):
 	cam = cam_pos
 	rand.randomize()
-	find_path(rand.randi_range(1, 1), way)
+	find_path(rand.randi_range(3, 3), way)
