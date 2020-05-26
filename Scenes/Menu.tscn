@@ -17,9 +17,9 @@
 [ext_resource path="res://Resources/Menu/grey_button_exit.png" type="Texture" id=15]
 [ext_resource path="res://Resources/Menu/orange_button_exit.png" type="Texture" id=16]
 [ext_resource path="res://Resources/Menu/music_on.png" type="Texture" id=17]
-[ext_resource path="res://Resources/Menu/music_off.png" type="Texture" id=18]
 [ext_resource path="res://Scripts/Menu/ExitButton.gd" type="Script" id=19]
 [ext_resource path="res://Resources/Menu/MusicMenu_1.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Scripts/Menu/VolumeButton.gd" type="Script" id=21]
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -146,7 +146,7 @@ margin_top = 64.0
 margin_right = 1859.0
 margin_bottom = 237.0
 texture_normal = ExtResource( 17 )
-texture_hover = ExtResource( 18 )
+script = ExtResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -155,3 +155,4 @@ __meta__ = {
 stream = ExtResource( 20 )
 autoplay = true
 [connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="VolumeButton" to="VolumeButton" method="_on_VolumeButton_pressed"]
