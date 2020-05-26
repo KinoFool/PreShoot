@@ -28,10 +28,14 @@ func random_direction():
 	
 func tp_checkpoint(way):
 	checkpoint.position -= checkpoint_margin
-	if camera.times >= 2 and tmp_way != 2: checkpoint.position -= camera.trans_way(tmp_way)
+#	if camera.times >= 3 and tmp_way != 2: checkpoint.position -= camera.trans_way(tmp_way)
 	checkpoint.position += camera.trans_way(way) * 2
-	if camera.times >= 2 and way != 2: checkpoint.position.y += camera.trans_way(way).y
-	checkpoint_margin = camera.trans_way(way)
+	if camera.times >= 2 and way != 2:
+		checkpoint.position.y += camera.trans_way(way).y
+		checkpoint_margin = camera.trans_way(way)
+		checkpoint_margin -= camera.trans_way(way)
+	else:
+		checkpoint_margin = camera.trans_way(way)
 	tmp_way = way
 	
 func end_blocks(way):
@@ -67,6 +71,7 @@ func generate_newblocks(way):
 
 func next_step():
 	var way = random_direction()
+#	way = 3
 	print("Way = ", way)
 	camera.change_camera(way)
 	tp_checkpoint(way)
