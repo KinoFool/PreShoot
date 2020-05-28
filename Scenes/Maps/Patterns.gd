@@ -303,6 +303,7 @@ func select_pat1(i):
 	if i == 4: pat14()
 	if i == 5: pat15()
 	if i == 6: pat16()
+	create_on(3, 8)
 
 func select_pat2(i):
 	if i == 1: pat21()
@@ -324,7 +325,6 @@ func find_path(i, j):
 	if j == 1: select_pat1(i)
 	if j == 2: select_pat2(i)
 	if j == 3: select_pat3(i)
-	print("Pattern number ", i)
 
 func pattern_gestion(cam_pos, way):
 	cam = cam_pos

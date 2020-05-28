@@ -1,24 +1,15 @@
 extends Camera2D
 
 onready var pattern = get_parent().get_node("Generation/CP/Patterns")
+onready var cp = get_parent().get_node("Generation/CP")
+onready var player = get_parent().get_node("Dog")
 onready var zone = [1, 0, 0]
 onready var times = 0
 
-func trans_way(way):
-	if way == 0: return Vector2(308, -231)
-	if way == 1: return Vector2(616, -231)
-	if way == 2: return Vector2(616, 0)
-	if way == 3: return Vector2(616, 231)
-	if way == 4: return Vector2(308, 231)
-	if way == 5: return Vector2(0, 231)
-	if way == 6: return Vector2(0, 0)
-	if way == 7: return Vector2(0, -231)
+var margin = 0
+var way_tmp = 2
 
-func change_camera(way):
-	times += 1
-	print(times)
-	self.position += trans_way(way)
-	if times >= 2 and way != 2: self.position.y += trans_way(way).y
+func move_tab(way):
 	if way == 1:
 		zone[0] += 1
 		zone[1] += 1
@@ -28,3 +19,42 @@ func change_camera(way):
 		zone[2] += 1
 	if zone[0] % 5 == 0:
 		pattern.difficult += 1
+
+func trans_way(way):
+	if way == 1: return 1 * 77
+	if way == 2: return 4 * 77
+	if way == 3: return 7 * 77
+
+func trans_play(way):
+	if way == 1: return 7 * 77
+	if way == 2: return 4 * 77
+	if way == 3: return 1 * 77
+
+func go_dir_from1(way):
+	if way == 1: return -231 * 3
+	if way == 2: return -231 * 2
+	if way == 3: return 231
+
+func go_dir_from2(way):
+	if way == 1: return -231
+	if way == 2: return 0
+	if way == 3: return 231
+
+func go_dir_from3(way):
+	if way == 1: return 231
+	if way == 2: return 231 * 2
+	if way == 3: return 231 * 3
+
+func change_camera(way):
+	times += 1
+	self.position.y -= margin
+	if way_tmp == 1: margin = go_dir_from1(way)
+	if way_tmp == 2: margin = go_dir_from2(way)
+	if way_tmp == 3: margin = go_dir_from3(way)
+	self.position.x += 616
+	self.position.y += margin
+	cp.position = self.position + Vector2(11 * 77 + 40, trans_way(way) + 12)
+	player.position = self.position + Vector2(3 * 77, trans_play(way))
+	way_tmp = way
+	print("Way : ", way)
+	move_tab(way)

@@ -9,8 +9,20 @@ onready var live = 3
 
 func _ready():
 	live = 3
-	
+
+func _physics_process(delta):
+	if camera.zone[0] > 1:
+		player.fall = do_player_failed()
+
+func do_player_failed():
+	if player.position.x > camera.position.x and player.position.x < camera.position.x + 1024:
+		if player.position.y > camera.position.y - 100 and player.position.y < camera.position.y + 600:
+			return false
+	print("False !!! ", player.position, camera.position)
+	return true
+
 func game_over():
+	player.position = Vector2(500, 300)
 	sfx.high_score_reached()
 	camera.smoothing_enabled = true
 	camera.smoothing_speed = 2
@@ -22,8 +34,8 @@ func game_over():
 
 func death():
 	var p_check = get_parent().get_parent().get_node("Generation/CP").player_position
-	live -= 1
 	player.position = p_check
+	live -= 1
 	if live == 0:
 		game_over()
 		return

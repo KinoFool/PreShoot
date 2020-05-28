@@ -8,6 +8,7 @@ var stock_moves = [[], []]
 var Timer = 0
 var x_time = 0
 var game_type = "level"
+var fall = false
 
 const UP = Vector2(0, -1)
 export var gravity = 20
@@ -51,8 +52,8 @@ func run_gestion():
 	elif status == "end" and motion.x == 0:
 		$Sprite.play("Dead")
 
-func reload_scene(fall):
-	if Input.is_action_just_pressed("ui_reload") or fall > 2000:
+func reload_scene():
+	if Input.is_action_just_pressed("ui_reload") or (fall == true and lives.live > 0 and status != "recording"):
 		status = "end"
 		if game_type == "endless":
 			if lives.live > 0:
@@ -68,7 +69,7 @@ func _physics_process(delta):
 	animation()
 	gravity()
 	move_and_slide(motion, UP)
-	reload_scene(motion.y)
+	reload_scene()
 
 func a_move():
 	if Input.is_action_just_pressed("ui_right"):

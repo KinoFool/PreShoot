@@ -11,9 +11,9 @@ var rand = RandomNumberGenerator.new()
 var current = 2
 var player
 var checkpoint
-var checkpoint_margin = Vector2(616, 0)
+var checkpoint_margin = 0
 var player_position
-var tmp_way = 0
+var way_tmp = 1
 
 func _ready():
 	player_func.game_type = "endless"
@@ -24,19 +24,17 @@ func _ready():
 func random_direction():
 	rand.randomize()
 	var nb = rand.randi_range(1, 3)
+	while way_tmp == nb:
+		nb = rand.randi_range(1, 3)
 	return nb
 	
 func tp_checkpoint(way):
-	checkpoint.position -= checkpoint_margin
-#	if camera.times >= 3 and tmp_way != 2: checkpoint.position -= camera.trans_way(tmp_way)
-	checkpoint.position += camera.trans_way(way) * 2
-	if camera.times >= 2 and way != 2:
-		checkpoint.position.y += camera.trans_way(way).y
-		checkpoint_margin = camera.trans_way(way)
-		checkpoint_margin -= camera.trans_way(way)
-	else:
-		checkpoint_margin = camera.trans_way(way)
-	tmp_way = way
+#	checkpoint.position.y -= checkpoint_margin
+#	checkpoint_margin = camera.trans_way(way).y
+#	checkpoint.position.y += checkpoint_margin * 2
+#	checkpoint.position.x += 616
+#	way_tmp = way
+	pass
 	
 func end_blocks(way):
 	var new = load("res://Scenes/Maps/src/crate.tscn")
@@ -71,11 +69,10 @@ func generate_newblocks(way):
 
 func next_step():
 	var way = random_direction()
-#	way = 3
-	print("Way = ", way)
 	camera.change_camera(way)
 	tp_checkpoint(way)
 	generate_newblocks(way)
+	way_tmp = way
 	
 
 func maybe_player_entered(item):
