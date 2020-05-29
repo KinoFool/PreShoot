@@ -10,6 +10,7 @@ var x_time = 0
 var game_type = "level"
 var fall = false
 var can_reload = true
+var allow_play = false
 
 const UP = Vector2(0, -1)
 export var gravity = 20
@@ -57,6 +58,7 @@ func reload_scene():
 	if can_reload == false:
 		return
 	if Input.is_action_just_pressed("ui_reload") or (fall == true and lives.live > 0 and status != "recording"):
+		allow_play = false
 		status = "end"
 		if game_type == "endless":
 			if lives.live > 0:
@@ -89,6 +91,7 @@ func record_moves():
 	if key != "none":
 		stock_moves[0].append(round(Timer * 1000) / 1000)
 		stock_moves[1].append(key)
+		allow_play = true
 
 func play_moves():
 	if x_time == len(stock_moves[0]) or len(stock_moves[0]) == 0:
@@ -107,7 +110,7 @@ func gravity():
 
 
 func check_status():
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and allow_play == true:
 		Timer = stock_moves[0][0]
 		status = "play"
 
@@ -140,4 +143,5 @@ func checkpoint_past():
 		stock_moves[1].remove(x)
 		x -= 1
 	Timer = 0
+	allow_play = false
 	move_and_slide(motion, UP)

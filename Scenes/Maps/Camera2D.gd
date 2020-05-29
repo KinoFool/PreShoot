@@ -48,5 +48,4 @@ func change_camera(way):
 	cp.position = self.position + Vector2(11 * 77 + 40, trans_way(way) + 12)
 	player.position = self.position + Vector2(3 * 77, trans_play(way))
 	way_tmp = way
-	print("Way : ", way)
 	move_tab(way)

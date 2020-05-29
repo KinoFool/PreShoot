@@ -22,7 +22,6 @@ func do_player_failed():
 	if player.position.x > camera.position.x and player.position.x < camera.position.x + 1024:
 		if player.position.y > camera.position.y - 100 and player.position.y < camera.position.y + 600:
 			return false
-	print("False !!! ", player.position, camera.position)
 	return true
 
 func game_over():
@@ -47,4 +46,3 @@ func death():
 	player.stock_moves[1].clear()
 	player.x_time = 0
 	player.status = "recording"
-	print(live)

@@ -4,12 +4,14 @@ onready var lives = get_parent().get_parent().get_node("Dog/Lives")
 onready var camera = get_parent().get_parent().get_node("Camera2D")
 onready var pattern = get_parent().get_parent().get_node("Generation/CP/Patterns")
 onready var more_life = get_parent().get_node("5+")
+onready var lvl = get_parent().get_node("Level_music")
 
 onready var timer = 0
 var minus_one = false
 
 func increase_lvl():
 	more_life.play()
+	lvl.stream_paused = true
 	lives.live += 1
 
 func in_game_display():

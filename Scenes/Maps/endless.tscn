@@ -317,17 +317,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level_music" type="AudioStreamPlayer2D" parent="Camera2D"]
-position = Vector2( 485.364, 266.8 )
-stream = ExtResource( 9 )
-autoplay = true
-max_distance = 1e+10
-bus = "Level"
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="New_score" type="AudioStreamPlayer" parent="Camera2D"]
 stream = ExtResource( 12 )
 mix_target = 2
@@ -338,3 +327,9 @@ script = ExtResource( 11 )
 stream = ExtResource( 13 )
 bus = "SFX"
 script = ExtResource( 14 )
+
+[node name="Level_music" type="AudioStreamPlayer" parent="Camera2D"]
+stream = ExtResource( 9 )
+volume_db = -4.039
+autoplay = true
+script = ExtResource( 10 )
