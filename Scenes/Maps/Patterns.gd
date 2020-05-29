@@ -250,7 +250,7 @@ func pat32():
 	pass
 func pat33():
 	for x in range(11, 13):
-		for y in range(0, 6):
+		for y in range(0, 5):
 			create_on(x, y)
 	for x in range(3, 5):
 		for y in range(2, 9):
@@ -262,7 +262,7 @@ func pat33():
 	for i in range(5, 11):
 		create_on(i, 8)
 func pat34():
-	for x in range(11, 13):
+	for x in range(11, 12):
 		for y in range(0, 5):
 			create_on(x, y)
 	create_on(9, 4)
@@ -330,6 +330,7 @@ func find_path(i, j):
 	if j == 1: select_pat1(i)
 	if j == 2: select_pat2(i)
 	if j == 3: select_pat3(i)
+	print("pat", j, i)
 
 func pattern_gestion(cam_pos, way):
 	cam = cam_pos

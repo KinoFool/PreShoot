@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 onready var lives = get_parent().get_parent().get_node("Dog/Lives")
 
