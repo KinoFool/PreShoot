@@ -304,6 +304,7 @@ func select_pat1(i):
 	if i == 5: pat15()
 	if i == 6: pat16()
 	create_on(3, 8)
+	create_on(4, 8)
 
 func select_pat2(i):
 	if i == 1: pat21()
@@ -312,6 +313,8 @@ func select_pat2(i):
 	if i == 4: pat24()
 	if i == 5: pat25()
 	if i == 6: pat26()
+	create_on(3, 5)
+	create_on(4, 5)
 
 func select_pat3(i):
 	if i == 1: pat31()
@@ -320,6 +323,8 @@ func select_pat3(i):
 	if i == 4: pat34()
 	if i == 5: pat35()
 	if i == 6: pat36()
+	create_on(3, 2)
+	create_on(4, 2)
 
 func find_path(i, j):
 	if j == 1: select_pat1(i)

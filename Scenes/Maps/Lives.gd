@@ -11,7 +11,7 @@ func _ready():
 	live = 3
 
 func _physics_process(delta):
-	if camera.zone[0] > 1:
+	if camera.zone[0] > 1 and live > 0:
 		player.fall = do_player_failed()
 
 func do_player_failed():
@@ -22,7 +22,6 @@ func do_player_failed():
 	return true
 
 func game_over():
-	player.position = Vector2(500, 300)
 	sfx.high_score_reached()
 	camera.smoothing_enabled = true
 	camera.smoothing_speed = 2

@@ -30,27 +30,17 @@ func trans_play(way):
 	if way == 2: return 4 * 77
 	if way == 3: return 1 * 77
 
-func go_dir_from1(way):
-	if way == 1: return -231 * 3
-	if way == 2: return -231 * 2
-	if way == 3: return 231
-
-func go_dir_from2(way):
+func go_dir(way):
 	if way == 1: return -231
 	if way == 2: return 0
 	if way == 3: return 231
 
-func go_dir_from3(way):
-	if way == 1: return 231
-	if way == 2: return 231 * 2
-	if way == 3: return 231 * 3
-
 func change_camera(way):
 	times += 1
 	self.position.y -= margin
-	if way_tmp == 1: margin = go_dir_from1(way)
-	if way_tmp == 2: margin = go_dir_from2(way)
-	if way_tmp == 3: margin = go_dir_from3(way)
+	if way_tmp == 1: self.position.y -= 231 * 2
+	if way_tmp == 3: self.position.y += 231 * 2
+	margin = go_dir(way)
 	self.position.x += 616
 	self.position.y += margin
 	cp.position = self.position + Vector2(11 * 77 + 40, trans_way(way) + 12)
