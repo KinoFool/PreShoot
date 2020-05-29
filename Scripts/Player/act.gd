@@ -45,14 +45,12 @@ func jump_gestion():
 	return false
 
 func run_gestion():
-	if motion.x > 0:
-		$Sprite.flip_h = false
-		$Sprite.play("Run")
-	elif motion.x < 0:
-		$Sprite.flip_h = true
-		$Sprite.play("Run")
-	elif status == "end" and motion.x == 0:
-		$Sprite.play("Dead")
+	if motion.x != 0: $Sprite.play("Run")
+	if motion.x > 0: $Sprite.flip_h = false
+	elif motion.x < 0: $Sprite.flip_h = true
+	elif status != "end" and motion.x == 0: $Sprite.play("Idle")
+	elif status == "end" and motion.x == 0: $Sprite.play("Dead")
+	
 
 func reload_scene():
 	if can_reload == false:

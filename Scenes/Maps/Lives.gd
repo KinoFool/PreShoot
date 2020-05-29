@@ -4,6 +4,8 @@ onready var player = get_parent().get_parent().get_node("Dog")
 onready var camera =  get_parent().get_parent().get_node("Camera2D")
 onready var hud = get_parent().get_node("Lives")
 onready var sfx = get_parent().get_parent().get_node("Camera2D/New_score")
+onready var lvl = get_parent().get_parent().get_node("Camera2D/Level_music")
+onready var min_one = get_parent().get_parent().get_node("Camera2D/-1")
 
 onready var live = 3
 
@@ -36,11 +38,13 @@ func game_over():
 
 func death():
 	var p_check = get_parent().get_parent().get_node("Generation/CP").player_position
-	player.position = p_check
 	live -= 1
 	if live == 0:
 		game_over()
 		return
+	player.position = p_check
+	lvl.stream_paused = true
+	min_one.play()
 	player.motion = Vector2(0, 0)
 	player.stock_moves[0].clear()
 	player.stock_moves[1].clear()
