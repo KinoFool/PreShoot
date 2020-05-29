@@ -3,6 +3,7 @@ extends Camera2D
 onready var pattern = get_parent().get_node("Generation/CP/Patterns")
 onready var cp = get_parent().get_node("Generation/CP")
 onready var player = get_parent().get_node("Dog")
+onready var label = get_parent().get_node("Camera2D/Shoots")
 onready var zone = [1, 0, 0]
 onready var times = 0
 
@@ -17,8 +18,9 @@ func move_tab(way):
 	if way == 3:
 		zone[0] += 1
 		zone[2] += 1
-	if zone[0] % 5 == 0:
+	if zone[0] % 2 == 0:
 		pattern.difficult += 1
+		label.increase_lvl()
 
 func trans_way(way):
 	if way == 1: return 1 * 77

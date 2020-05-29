@@ -9,6 +9,7 @@ var Timer = 0
 var x_time = 0
 var game_type = "level"
 var fall = false
+var can_reload = true
 
 const UP = Vector2(0, -1)
 export var gravity = 20
@@ -53,6 +54,8 @@ func run_gestion():
 		$Sprite.play("Dead")
 
 func reload_scene():
+	if can_reload == false:
+		return
 	if Input.is_action_just_pressed("ui_reload") or (fall == true and lives.live > 0 and status != "recording"):
 		status = "end"
 		if game_type == "endless":

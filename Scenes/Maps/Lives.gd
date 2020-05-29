@@ -13,6 +13,10 @@ func _ready():
 func _physics_process(delta):
 	if camera.zone[0] > 1 and live > 0:
 		player.fall = do_player_failed()
+	if camera.zone[0] == 1:
+		player.can_reload = false
+	else:
+		player.can_reload = true
 
 func do_player_failed():
 	if player.position.x > camera.position.x and player.position.x < camera.position.x + 1024:
@@ -28,7 +32,7 @@ func game_over():
 	camera.zoom.x = camera.zone[0]
 	camera.zoom.y = camera.zone[0]
 	camera.position = camera.position
-	camera.position = Vector2(77 - 300, -300  + (camera.zone[0] - 1) * 50)
+	camera.position = Vector2(77 - 300, -300  + (1 / ((camera.zone[0] - 1) * (camera.zone[0] - 1))) * 10 )
 	print(camera.zoom)
 
 func death():
