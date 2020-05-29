@@ -1,14 +1,18 @@
 extends KinematicBody2D
 
+onready var lives = get_node("Lives")
+
 var motion = Vector2()
 var status = "recording"
 var stock_moves = [[], []]
 var Timer = 0
 var x_time = 0
-
-export var gravity = 20
+var game_type = "level"
+var fall = false
+var can_reload = true
 
 const UP = Vector2(0, -1)
+export var gravity = 20
 export var puissance_saut = -600
 export var vitesse = 200
 
@@ -22,7 +26,6 @@ func move_in_x(current_key):
 		return (0)
 
 func move_in_y(current_key):
-	print(is_on_floor())
 	if current_key == "up" and is_on_floor() == true:
 		motion.y = puissance_saut
 
@@ -50,18 +53,26 @@ func run_gestion():
 	elif status == "end" and motion.x == 0:
 		$Sprite.play("Dead")
 
-func reload_scene(fall):
-	if Input.is_action_just_pressed("ui_reload") or fall > 2000:
-		get_tree().reload_current_scene()
+func reload_scene():
+	if can_reload == false:
+		return
+	if Input.is_action_just_pressed("ui_reload") or (fall == true and lives.live > 0 and status != "recording"):
+		status = "end"
+		if game_type == "endless":
+			if lives.live > 0:
+				lives.death()
+			else:
+				lives.live = 3
+				get_tree().reload_current_scene()
+		else:
+			get_tree().reload_current_scene()
 
 func _physics_process(delta):
 	check_sequence(status, delta)
 	animation()
 	gravity()
-	if motion.y == -600:
-		print("Saut")
 	move_and_slide(motion, UP)
-	reload_scene(motion.y)
+	reload_scene()
 
 func a_move():
 	if Input.is_action_just_pressed("ui_right"):
@@ -81,12 +92,9 @@ func record_moves():
 
 func play_moves():
 	if x_time == len(stock_moves[0]) or len(stock_moves[0]) == 0:
-		print("FIN!!")
 		status = "end"
 		return
-	print(x_time)
 	if round(Timer * 1000) / 1000 >= stock_moves[0][x_time]:
-		printt(stock_moves[0][x_time], stock_moves[1][x_time])
 		motion.x += move_in_x(stock_moves[1][x_time])
 		move_in_y(stock_moves[1][x_time])
 		x_time += 1
@@ -101,8 +109,6 @@ func gravity():
 func check_status():
 	if Input.is_action_just_pressed("ui_accept"):
 		Timer = stock_moves[0][0]
-		print ("Play mode activé !")
-		print (stock_moves)
 		status = "play"
 
 func check_sequence(status, delta):
@@ -124,3 +130,14 @@ func animation():
 	if jump_gestion() == true:
 		return
 	run_gestion()
+	
+func checkpoint_past():
+	var x = len(stock_moves[0]) - 1
+	status = "recording"
+	x_time = 0
+	while x >= 0:
+		stock_moves[0].remove(x)
+		stock_moves[1].remove(x)
+		x -= 1
+	Timer = 0
+	move_and_slide(motion, UP)
