@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Resources/Menu/clouds_2.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Menu/sky.png" type="Texture" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://Resources/Menu/MusicMenu_1.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Scripts/Menu/VolumeButton.gd" type="Script" id=21]
 [ext_resource path="res://Scripts/Menu/LevelsButton.gd" type="Script" id=22]
+[ext_resource path="res://Resources/Music/select.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Resources/Music/return.ogg" type="AudioStream" id=24]
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -158,6 +160,16 @@ __meta__ = {
 [node name="MusicMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
 autoplay = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Select" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 23 )
+bus = "SFX"
+
+[node name="Back" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 24 )
+bus = "SFX"
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="LevelsButton" to="LevelsButton" method="_on_LevelsButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_ExitButton_pressed"]
