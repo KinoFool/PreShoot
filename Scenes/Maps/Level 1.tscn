@@ -106,10 +106,11 @@ position = Vector2( 1114.61, 827.989 )
 position = Vector2( 1114.61, 752.989 )
 
 [node name="Sprite" parent="." instance=ExtResource( 3 )]
-position = Vector2( 139.268, 728.284 )
+position = Vector2( 137.697, 729.413 )
 
 [node name="Camera2D" type="Camera2D" parent="Sprite"]
 current = true
+zoom = Vector2( 0.5, 0.5 )
 limit_left = 0
 limit_top = 0
 limit_right = 2000
