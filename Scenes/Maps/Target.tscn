@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Maps/src/Target.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Tileset/Wood/png/Object/Sign_2.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Text_fonts/Lalezar-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Resources/Music/Preshoot_level_clear.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 49.7653
 
 [sub_resource type="DynamicFont" id=2]
-size = 100
-outline_size = 11
+size = 70
+outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
-extra_spacing_space = 5
+extra_spacing_space = 10
 font_data = ExtResource( 3 )
 
 [node name="Target" type="Node2D"]
@@ -28,15 +29,17 @@ position = Vector2( -6.09428, 0 )
 shape = SubResource( 1 )
 
 [node name="Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
-margin_left = -291.821
-margin_top = -309.468
-margin_right = 314.179
-margin_bottom = -152.468
+margin_left = -213.425
+margin_top = -187.454
+margin_right = 222.575
+margin_bottom = -76.4539
 custom_fonts/font = SubResource( 2 )
 text = "Level Cleared !"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="body_entered" from="Sign_2/Area2D" to="." method="_on_Area2D_body_entered"]
