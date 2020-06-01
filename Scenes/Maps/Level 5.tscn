@@ -228,7 +228,7 @@ position = Vector2( 3261.5, 1003.22 )
 position = Vector2( 3338.33, 928.888 )
 
 [node name="crate96" parent="Crates" instance=ExtResource( 2 )]
-position = Vector2( 3415.17, 854.559 )
+position = Vector2( 3414.17, 853.559 )
 
 [node name="crate97" parent="Crates" instance=ExtResource( 2 )]
 position = Vector2( 3491.96, 852.875 )
