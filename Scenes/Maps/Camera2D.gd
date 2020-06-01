@@ -18,7 +18,7 @@ func move_tab(way):
 	if way == 3:
 		zone[0] += 1
 		zone[2] += 1
-	if zone[0] % 2 == 0:
+	if zone[0] != 2 and (zone[0] - 2) % 5 == 0:
 		pattern.difficult += 1
 		label.increase_lvl()
 

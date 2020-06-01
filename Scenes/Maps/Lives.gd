@@ -2,6 +2,7 @@ extends Node2D
 
 onready var player = get_parent().get_parent().get_node("Dog")
 onready var camera =  get_parent().get_parent().get_node("Camera2D")
+onready var font =  get_parent().get_parent().get_node("Camera2D/Font")
 onready var hud = get_parent().get_node("Lives")
 onready var sfx = get_parent().get_parent().get_node("Camera2D/New_score")
 onready var lvl = get_parent().get_parent().get_node("Camera2D/Level_music")
@@ -30,10 +31,11 @@ func game_over():
 	sfx.high_score_reached()
 	camera.smoothing_enabled = true
 	camera.smoothing_speed = 2
-	camera.zoom.x = camera.zone[0]
-	camera.zoom.y = camera.zone[0]
-	camera.position = camera.position
-	camera.position = Vector2(77 - 300, -300  + (1 / ((camera.zone[0] - 1) * (camera.zone[0] - 1))) * 10 )
+	camera.zoom.x = camera.zone[0] * 0.5
+	camera.zoom.y = camera.zone[0] * 0.5
+	font.scale = camera.zoom * 4
+	font.z_index = -5
+	camera.position = Vector2(0, -77 * camera.zone[0] * (camera.zone[0] / 2))
 	print(camera.zoom)
 
 func death():
