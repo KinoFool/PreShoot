@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 onready var lives = get_node("Lives")
+onready var sfx = get_parent().get_node("SFX")
+onready var lvl = get_parent().get_node("Start position")
 
 var motion = Vector2()
 var status = "recording"
@@ -16,7 +18,6 @@ const UP = Vector2(0, -1)
 export var gravity = 20
 export var puissance_saut = -600
 export var vitesse = 200
-
 
 func move_in_x(current_key):
 	if current_key == "right":
@@ -50,7 +51,17 @@ func run_gestion():
 	elif motion.x < 0: $Sprite.flip_h = true
 	elif status != "end" and motion.x == 0: $Sprite.play("Idle")
 	elif status == "end" and motion.x == 0: $Sprite.play("Dead")
-	
+
+func restart_scene():
+	sfx.fail()
+	status = "recording"
+	self.position = lvl.position
+	stock_moves[0].clear()
+	stock_moves[1].clear()
+	x_time = 0
+	Timer = 0
+	motion = Vector2(0, 0)
+	move_and_slide(motion, UP)
 
 func reload_scene():
 	if can_reload == false:
@@ -65,7 +76,7 @@ func reload_scene():
 				lives.live = 3
 				get_tree().reload_current_scene()
 		else:
-			get_tree().reload_current_scene()
+			restart_scene()
 
 func _physics_process(delta):
 	check_sequence(status, delta)
@@ -140,6 +151,6 @@ func checkpoint_past():
 		stock_moves[0].remove(x)
 		stock_moves[1].remove(x)
 		x -= 1
-	Timer = 0
 	allow_play = false
+	Timer = 0
 	move_and_slide(motion, UP)
