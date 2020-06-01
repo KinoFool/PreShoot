@@ -152,9 +152,9 @@ __meta__ = {
 
 [node name="Level6" type="TextureButton" parent="."]
 margin_left = 376.0
-margin_top = 564.0
+margin_top = 531.0
 margin_right = 547.0
-margin_bottom = 737.0
+margin_bottom = 704.0
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 11 )
@@ -164,9 +164,9 @@ __meta__ = {
 
 [node name="Level7" type="TextureButton" parent="."]
 margin_left = 612.0
-margin_top = 564.0
+margin_top = 531.0
 margin_right = 783.0
-margin_bottom = 737.0
+margin_bottom = 704.0
 texture_normal = ExtResource( 27 )
 texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 11 )
@@ -176,9 +176,9 @@ __meta__ = {
 
 [node name="Level8" type="TextureButton" parent="."]
 margin_left = 864.0
-margin_top = 563.0
+margin_top = 531.0
 margin_right = 1035.0
-margin_bottom = 736.0
+margin_bottom = 704.0
 texture_normal = ExtResource( 20 )
 texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 11 )
@@ -188,9 +188,9 @@ __meta__ = {
 
 [node name="Level9" type="TextureButton" parent="."]
 margin_left = 1120.0
-margin_top = 560.0
+margin_top = 531.0
 margin_right = 1291.0
-margin_bottom = 733.0
+margin_bottom = 704.0
 texture_normal = ExtResource( 21 )
 texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 11 )
@@ -200,9 +200,9 @@ __meta__ = {
 
 [node name="Level10" type="TextureButton" parent="."]
 margin_left = 1376.0
-margin_top = 561.0
+margin_top = 531.0
 margin_right = 1547.0
-margin_bottom = 734.0
+margin_bottom = 704.0
 texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 11 )
@@ -211,11 +211,10 @@ __meta__ = {
 }
 
 [node name="Endless" type="TextureButton" parent="."]
-margin_left = 646.0
-margin_top = 816.0
-margin_right = 2212.0
-margin_bottom = 1415.0
-rect_scale = Vector2( 0.4, 0.35 )
+margin_left = 795.64
+margin_top = 730.676
+margin_right = 1110.64
+margin_bottom = 870.676
 texture_normal = ExtResource( 14 )
 texture_pressed = ExtResource( 25 )
 texture_hover = ExtResource( 25 )
