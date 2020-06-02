@@ -8,7 +8,7 @@
 [ext_resource path="res://Resources/Music/Preshoot_level_2.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Resources/Music/-1 Life.ogg" type="AudioStream" id=7]
 
-[node name="Level 3" type="Node2D"]
+[node name="Level 5" type="Node2D"]
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 685.175, 429.832 )
@@ -246,16 +246,15 @@ position = Vector2( 970.941, 869.657 )
 position = Vector2( 470.793, 857.657 )
 
 [node name="Dog" parent="." instance=ExtResource( 3 )]
-position = Vector2( 208.108, 831.157 )
+position = Vector2( 235.926, 828.066 )
 
-[node name="Camera2D" type="Camera2D" parent="Dog"]
-position = Vector2( 1, -8.5 )
+[node name="CamPlayer" type="Camera2D" parent="Dog"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 limit_left = 0
-limit_top = -200
-limit_right = 4010
-limit_bottom = 1060
+limit_top = 0
+limit_right = 4045
+limit_bottom = 1080
 editor_draw_limits = true
 
 [node name="SFX" type="Node" parent="."]
@@ -275,3 +274,10 @@ position = Vector2( 210.5, 746.058 )
 
 [node name="Target" parent="." instance=ExtResource( 5 )]
 position = Vector2( 3861.89, 626.865 )
+
+[node name="CamMap" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_bottom = 1080
+editor_draw_limits = true

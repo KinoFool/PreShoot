@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Scripts/Player/act.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Sprites/Dog/Run/Run (1).png" type="Texture" id=2]
@@ -75,6 +75,7 @@
 [ext_resource path="res://Resources/Sprites/Dog/Hurt/Hurt (7).png" type="Texture" id=73]
 [ext_resource path="res://Resources/Sprites/Dog/Hurt/Hurt (9).png" type="Texture" id=74]
 [ext_resource path="res://Resources/Sprites/Dog/Hurt/Hurt (10).png" type="Texture" id=75]
+[ext_resource path="res://Scenes/GUI/UI.tscn" type="PackedScene" id=76]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 32.0
@@ -97,19 +98,9 @@ animations = [ {
 "name": "Fall",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 49 ), ExtResource( 22 ), ExtResource( 70 ), ExtResource( 18 ), ExtResource( 69 ), ExtResource( 71 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 75 ) ],
-"loop": true,
-"name": "Hurt",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 54 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 46 ), ExtResource( 47 ) ],
-"loop": true,
-"name": "Slide",
 "speed": 20.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
@@ -120,6 +111,16 @@ animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ) ],
 "loop": false,
 "name": "Dead",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 22 ), ExtResource( 70 ), ExtResource( 18 ), ExtResource( 69 ), ExtResource( 71 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 75 ) ],
+"loop": true,
+"name": "Hurt",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "Slide",
 "speed": 20.0
 } ]
 
@@ -135,3 +136,5 @@ position = Vector2( 5.12057, 8.33591 )
 scale = Vector2( 0.208683, 0.228621 )
 frames = SubResource( 2 )
 animation = "Idle"
+
+[node name="UI" parent="." instance=ExtResource( 76 )]

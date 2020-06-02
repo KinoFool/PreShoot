@@ -256,15 +256,15 @@ position = Vector2( 1721.13, 675.066 )
 position = Vector2( 1796.25, 675.066 )
 
 [node name="Sprite" parent="." instance=ExtResource( 3 )]
-position = Vector2( 109.727, 243.993 )
+position = Vector2( 144.618, 234.898 )
 
-[node name="Camera2D" type="Camera2D" parent="Sprite"]
+[node name="CamPlayer" type="Camera2D" parent="Sprite"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
-limit_left = 10
-limit_top = 10
-limit_right = 5350
-limit_bottom = 1050
+limit_left = 0
+limit_top = 0
+limit_right = 5215
+limit_bottom = 1080
 editor_draw_limits = true
 
 [node name="SFX" type="Node" parent="."]
@@ -284,3 +284,10 @@ position = Vector2( 5010.44, 531.357 )
 
 [node name="Start position" type="Position2D" parent="."]
 position = Vector2( 108.006, 189.608 )
+
+[node name="CamMap" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_bottom = 1080
+editor_draw_limits = true

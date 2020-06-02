@@ -43,13 +43,13 @@ position = Vector2( 1155, 308 )
 [node name="Dog" parent="." instance=ExtResource( 3 )]
 position = Vector2( 149.357, 900.391 )
 
-[node name="Camera2D" type="Camera2D" parent="Dog"]
+[node name="CamPlayer" type="Camera2D" parent="Dog"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 limit_left = 0
-limit_top = -90
-limit_right = 1500
-limit_bottom = 1100
+limit_top = 0
+limit_right = 1380
+limit_bottom = 1080
 editor_draw_limits = true
 
 [node name="SFX" type="Node" parent="."]
@@ -68,3 +68,10 @@ position = Vector2( 150.217, 832.175 )
 
 [node name="Target" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1166.76, 237.863 )
+
+[node name="CamMap" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_bottom = 1080
+editor_draw_limits = true

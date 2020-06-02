@@ -14,6 +14,8 @@ var fall = false
 var can_reload = true
 var allow_play = false
 
+var map = true
+
 const UP = Vector2(0, -1)
 export var gravity = 20
 export var puissance_saut = -600
@@ -77,6 +79,26 @@ func reload_scene():
 				get_tree().reload_current_scene()
 		else:
 			restart_scene()
+			
+func manage_view():
+	print(map)
+	if Input.is_action_just_pressed("ui_cam"):
+		if map == true:
+			$UI/ReloadButton.hide()
+			$UI/LaunchButton.hide()
+			$UI/Commands/LeftButton.hide()
+			$UI/Commands/UpButton.hide()
+			$UI/Commands/RightButton.hide()
+			get_parent().get_node("CamMap").make_current()
+			map = false
+		else:
+			$UI/ReloadButton.show()
+			$UI/LaunchButton.show()
+			$UI/Commands/LeftButton.show()
+			$UI/Commands/UpButton.show()
+			$UI/Commands/RightButton.show()
+			$CamPlayer.make_current()
+			map = true
 
 func _physics_process(delta):
 	check_sequence(status, delta)
@@ -84,6 +106,7 @@ func _physics_process(delta):
 	gravity()
 	move_and_slide(motion, UP)
 	reload_scene()
+	manage_view()
 
 func a_move():
 	if Input.is_action_just_pressed("ui_right"):
