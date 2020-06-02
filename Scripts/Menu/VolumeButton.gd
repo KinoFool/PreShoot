@@ -16,5 +16,5 @@ func _on_VolumeButton_pressed():
 		music.stream_paused = 0
 		self.texture_normal = sprite_on
 	else:
-		music.stream_paused = 1	
+		music.stream_paused = 1
 		self.texture_normal = sprite_off

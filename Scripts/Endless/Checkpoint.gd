@@ -37,7 +37,7 @@ func tp_checkpoint(way):
 	pass
 	
 func end_blocks(way):
-	var new = load("res://Scenes/Maps/src/crate.tscn")
+	var new = load("res://Scenes/Sub-scenes/crate.tscn")
 	var block1 = new.instance()
 	var block2 = new.instance()
 	var pos1 = Vector2()
