@@ -13,153 +13,109 @@
 script = ExtResource( 7 )
 
 [node name="BG" type="Sprite" parent="."]
-position = Vector2( 685.175, 429.832 )
-scale = Vector2( 1.37035, 1.71696 )
+scale = Vector2( 1.45, 1.45 )
 texture = ExtResource( 6 )
+centered = false
 
 [node name="BG2" type="Sprite" parent="."]
-position = Vector2( 2054.71, 429.918 )
-scale = Vector2( 1.37035, 1.71719 )
+position = Vector2( 1450, 9.53674e-07 )
+scale = Vector2( 1.45, 1.45 )
 texture = ExtResource( 6 )
+centered = false
+
+[node name="BG3" type="Sprite" parent="."]
+position = Vector2( 2900, 4.76837e-07 )
+scale = Vector2( 1.45, 1.45 )
+texture = ExtResource( 6 )
+centered = false
 
 [node name="Crates" type="Node2D" parent="."]
 
 [node name="crate" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 208.108, 930.364 )
+position = Vector2( 154, 924 )
 
 [node name="crate2" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 283.086, 930.364 )
+position = Vector2( 231, 924 )
 
 [node name="crate52" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 914.232, 879.037 )
+position = Vector2( 847, 847 )
 
 [node name="crate61" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1123.9, 864.48 )
+position = Vector2( 1078, 770 )
 
 [node name="crate81" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1353.69, 862.48 )
+position = Vector2( 1386, 616 )
 
 [node name="crate86" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1582.24, 862.48 )
-
-[node name="crate67" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1582.24, 345.271 )
-
-[node name="crate66" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1582.24, 421.634 )
-
-[node name="crate65" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1582.24, 498.634 )
-
-[node name="crate70" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1659.03, 419.156 )
-
-[node name="crate69" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1659.03, 495.519 )
-
-[node name="crate68" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1659.03, 572.519 )
-
-[node name="crate73" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1736.03, 470.223 )
-
-[node name="crate72" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1736.03, 546.586 )
-
-[node name="crate71" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1736.03, 623.586 )
-
-[node name="crate18" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1273.02, 946.444 )
-
-[node name="crate19" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1350.13, 946.444 )
+position = Vector2( 1540, 539 )
 
 [node name="crate23" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 2544.99, 662.086 )
+position = Vector2( 2464, 308 )
 
 [node name="crate30" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 2468.38, 662.086 )
+position = Vector2( 2387, 308 )
 
 [node name="crate24" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 2621.07, 662.086 )
+position = Vector2( 2464, 770 )
 
-[node name="crate60" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1200.82, 936.809 )
-
-[node name="crate59" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1277.69, 1011.13 )
+[node name="crate25" parent="Crates" instance=ExtResource( 1 )]
+position = Vector2( 2387, 770 )
 
 [node name="crate80" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1430.61, 936.809 )
+position = Vector2( 2541, 308 )
 
 [node name="crate79" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1507.48, 1011.13 )
-
-[node name="crate85" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1659.16, 936.809 )
+position = Vector2( 2695, 847 )
 
 [node name="crate84" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1750.35, 1012.19 )
+position = Vector2( 2695, 385 )
 
 [node name="crate57" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 575.496, 841 )
+position = Vector2( 539, 847 )
 
 [node name="crate58" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 731.598, 984.944 )
+position = Vector2( 770, 1001 )
 
 [node name="crate64" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 499.282, 841 )
-
-[node name="crate62" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1123.9, 1011.13 )
+position = Vector2( 462, 847 )
 
 [node name="crate63" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1276.69, 862.63 )
-
-[node name="crate78" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1353.69, 1011.13 )
+position = Vector2( 1309, 770 )
 
 [node name="crate77" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1506.48, 862.63 )
-
-[node name="crate83" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1582.24, 1011.13 )
-
-[node name="crate82" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1749.35, 863.682 )
+position = Vector2( 1848, 847 )
 
 [node name="crate92" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1825.6, 937.861 )
+position = Vector2( 2310, 308 )
 
 [node name="crate93" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1901.51, 1012.19 )
+position = Vector2( 2926, 770 )
 
 [node name="crate94" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 1975.39, 1012.19 )
+position = Vector2( 2772, 462 )
 
 [node name="crate95" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 2052.22, 937.861 )
+position = Vector2( 2156, 616 )
 
 [node name="crate96" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 2129.06, 862.532 )
+position = Vector2( 2618, 308 )
 
 [node name="crate97" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 2205.85, 861.848 )
+position = Vector2( 2079, 770 )
 
 [node name="crate98" parent="Crates" instance=ExtResource( 1 )]
-position = Vector2( 2205.85, 785.353 )
+position = Vector2( 2233, 462 )
 
 [node name="Sprite" parent="." instance=ExtResource( 3 )]
-position = Vector2( 244.586, 832 )
+position = Vector2( 196.31, 833.8 )
 
 [node name="CamPlayer" type="Camera2D" parent="Sprite"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 limit_left = 0
 limit_top = 0
-limit_right = 2700
-limit_bottom = 1060
+limit_right = 3280
+limit_bottom = 1080
 editor_draw_limits = true
 
 [node name="SFX" type="Node" parent="."]
@@ -173,15 +129,16 @@ stream = ExtResource( 5 )
 bus = "SFX"
 
 [node name="Start position" type="Position2D" parent="."]
-position = Vector2( 207.304, 767.695 )
+position = Vector2( 196.31, 766.069 )
 
 [node name="Target" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2637.16, 592.513 )
+position = Vector2( 2398.66, 699.486 )
 
 [node name="CamMap" type="Camera2D" parent="."]
 anchor_mode = 0
 limit_left = 0
 limit_top = 0
+limit_right = 3280
 limit_bottom = 1080
 editor_draw_limits = true
 script = ExtResource( 8 )

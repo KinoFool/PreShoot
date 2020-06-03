@@ -14,9 +14,15 @@
 script = ExtResource( 8 )
 
 [node name="BG" type="Sprite" parent="."]
-position = Vector2( 991.256, 533.445 )
-scale = Vector2( 1.98251, 1.57269 )
+scale = Vector2( 1.45, 1.45 )
 texture = ExtResource( 1 )
+centered = false
+
+[node name="BG2" type="Sprite" parent="."]
+position = Vector2( 1450, 4.76837e-07 )
+scale = Vector2( 1.45, 1.45 )
+texture = ExtResource( 1 )
+centered = false
 
 [node name="Crates" type="Node" parent="."]
 
@@ -77,6 +83,7 @@ position = Vector2( 1822.81, 488.979 )
 anchor_mode = 0
 limit_left = 0
 limit_top = 0
+limit_right = 1975
 limit_bottom = 1080
 editor_draw_limits = true
 script = ExtResource( 9 )
