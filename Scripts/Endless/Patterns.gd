@@ -330,7 +330,6 @@ func find_path(i, j):
 	if j == 1: select_pat1(i)
 	if j == 2: select_pat2(i)
 	if j == 3: select_pat3(i)
-	print("pat", j, i)
 
 func pattern_gestion(cam_pos, way):
 	cam = cam_pos

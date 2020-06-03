@@ -4,9 +4,10 @@ onready var player = get_parent().get_parent().get_node("Dog")
 onready var camera =  get_parent().get_parent().get_node("Camera2D")
 onready var font =  get_parent().get_parent().get_node("Camera2D/Font")
 onready var hud = get_parent().get_node("Lives")
-onready var sfx = get_parent().get_parent().get_node("Camera2D/New_score")
 onready var lvl = get_parent().get_parent().get_node("Camera2D/Level_music")
 onready var min_one = get_parent().get_parent().get_node("Camera2D/-1")
+onready var save = get_parent().get_parent().get_node(".")
+
 
 onready var live = 3
 
@@ -28,7 +29,7 @@ func do_player_failed():
 	return true
 
 func game_over():
-	sfx.high_score_reached()
+	save.check_best_score(camera.zone[0] - 2)
 	camera.smoothing_enabled = true
 	camera.smoothing_speed = 2
 	camera.zoom.x = camera.zone[0] * 0.5
@@ -36,7 +37,6 @@ func game_over():
 	font.scale = camera.zoom * 4
 	font.z_index = -5
 	camera.position = Vector2(0, -77 * camera.zone[0] * (camera.zone[0] / 2))
-	print(camera.zoom)
 
 func death():
 	var p_check = get_parent().get_parent().get_node("Generation/CP").player_position

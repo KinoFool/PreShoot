@@ -81,7 +81,6 @@ func reload_scene():
 			restart_scene()
 			
 func manage_view():
-	print(map)
 	if game_type == "endless":
 		$UI/ReloadButton.show()
 		$UI/LaunchButton.show()
