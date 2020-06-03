@@ -22,7 +22,6 @@ boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon.png"
 config/windows_native_icon="res://icon.png"
-config/auto_accept_quit=false
 config/quit_on_go_back=false
 
 [display]
