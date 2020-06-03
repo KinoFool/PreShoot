@@ -6,3 +6,4 @@ export_presets.cfg
 *.TMP
 debug.keystore
 *.apk
+save.prs

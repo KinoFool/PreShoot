@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var save = get_parent().get_node(".")
 onready var lvl = get_parent().get_node("SFX/Level")
 onready var sprite = get_parent().get_node("Sprite")
 onready var anim = get_parent().get_node("Sprite/Sprite")
@@ -23,7 +24,9 @@ func _physics_process(delta):
 		anim.play("Idle")
 		level_cleared_animation()
 		if $Victory.get_playback_position() > 5:
-			get_tree().change_scene("res://Scenes/Levels.tscn")
+			save.increase_max_level()
+			save.load_max_level()
+#			get_tree().change_scene("res://Scenes/Levels.tscn")
 
 
 func _on_Area2D_body_entered(body):
