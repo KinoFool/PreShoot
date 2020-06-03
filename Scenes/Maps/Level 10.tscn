@@ -43,10 +43,10 @@ position = Vector2( 1379.03, 558.931 )
 [node name="crate8" parent="Crates" instance=ExtResource( 3 )]
 position = Vector2( 1808.45, 558.931 )
 
-[node name="Dog" parent="." instance=ExtResource( 2 )]
+[node name="Sprite" parent="." instance=ExtResource( 2 )]
 position = Vector2( 306.73, 735.476 )
 
-[node name="CamPlayer" type="Camera2D" parent="Dog"]
+[node name="CamPlayer" type="Camera2D" parent="Sprite"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 limit_left = 0

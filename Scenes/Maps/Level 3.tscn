@@ -216,11 +216,11 @@ bus = "Level"
 stream = ExtResource( 7 )
 bus = "SFX"
 
-[node name="Target" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3507.62, 509.631 )
-
 [node name="Start position" type="Position2D" parent="."]
 position = Vector2( 108.006, 189.608 )
+
+[node name="Target" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3507.62, 509.631 )
 
 [node name="CamMap" type="Camera2D" parent="."]
 anchor_mode = 0

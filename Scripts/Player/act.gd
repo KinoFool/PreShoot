@@ -68,7 +68,7 @@ func restart_scene():
 func reload_scene():
 	if can_reload == false:
 		return
-	if Input.is_action_just_pressed("ui_reload") or (fall == true and lives.live > 0 and status != "recording"):
+	if Input.is_action_just_pressed("ui_reload") or (fall == true and lives.live > 0 and status != "recording") or (self.position.y > 1100 and game_type == "level"):
 		allow_play = false
 		status = "end"
 		if game_type == "endless":
