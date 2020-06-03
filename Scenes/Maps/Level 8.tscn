@@ -111,11 +111,7 @@ position = Vector2( 847, 385 )
 position = Vector2( 308, 847 )
 
 [node name="Sprite" parent="." instance=ExtResource( 3 )]
-<<<<<<< HEAD
 position = Vector2( 1590.05, 64.6489 )
-=======
-position = Vector2( 1467.28, 63.4544 )
->>>>>>> 340a5f3a9ee1ba058e25ccaaa10077f67f7759a1
 
 [node name="CamPlayer" type="Camera2D" parent="Sprite"]
 current = true
