@@ -46,6 +46,12 @@ normal = ExtResource( 4 )
 pressed = ExtResource( 9 )
 action = "ui_left"
 
+[node name="LeftCamButton" type="TouchScreenButton" parent="Commands"]
+position = Vector2( 1224, 656 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 9 )
+action = "ui_left_cam"
+
 [node name="UpButton" type="TouchScreenButton" parent="Commands"]
 position = Vector2( 1395, 720 )
 normal = ExtResource( 5 )
@@ -57,6 +63,12 @@ position = Vector2( 1568, 832 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 14 )
 action = "ui_right"
+
+[node name="RightCamButton" type="TouchScreenButton" parent="Commands"]
+position = Vector2( 1568, 656 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 14 )
+action = "ui_right_cam"
 
 [node name="Return" type="TextureButton" parent="."]
 margin_left = 16.0
