@@ -82,6 +82,15 @@ func reload_scene():
 			
 func manage_view():
 	print(map)
+	if game_type == "endless":
+		$UI/ReloadButton.show()
+		$UI/LaunchButton.show()
+		$UI/Commands/LeftButton.show()
+		$UI/Commands/UpButton.show()
+		$UI/Commands/RightButton.show()
+		$UI/CameraButton.hide()
+		map = true
+		return
 	if Input.is_action_just_pressed("ui_cam"):
 		if map == true:
 			$UI/ReloadButton.hide()
