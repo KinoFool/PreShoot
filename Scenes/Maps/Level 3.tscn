@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/Tileset/Wood/png/BG/BG.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Sub-scenes/crate.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Resources/Music/Preshoot_level_2.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Resources/Music/-1 Life.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Scripts/Level/save_classic.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Level/CamMap.gd" type="Script" id=9]
 
 [node name="Level 3" type="Node2D"]
 script = ExtResource( 8 )
@@ -220,7 +221,7 @@ bus = "SFX"
 position = Vector2( 108.006, 189.608 )
 
 [node name="Target" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3507.62, 509.631 )
+position = Vector2( 3521.21, 528.719 )
 
 [node name="CamMap" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -228,3 +229,4 @@ limit_left = 0
 limit_top = 0
 limit_bottom = 1080
 editor_draw_limits = true
+script = ExtResource( 9 )
