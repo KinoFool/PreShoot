@@ -47,6 +47,7 @@ pressed = ExtResource( 9 )
 action = "ui_left_cam"
 
 [node name="LeftButton" type="TouchScreenButton" parent="Commands"]
+visible = false
 position = Vector2( 1224, 832 )
 normal = ExtResource( 4 )
 pressed = ExtResource( 9 )
@@ -59,6 +60,7 @@ pressed = ExtResource( 10 )
 action = "ui_up"
 
 [node name="RightCamButton" type="TouchScreenButton" parent="Commands"]
+visible = false
 position = Vector2( 1568, 832 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 14 )

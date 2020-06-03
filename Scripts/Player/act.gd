@@ -97,9 +97,13 @@ func manage_view():
 			$UI/Commands/LeftButton.hide()
 			$UI/Commands/UpButton.hide()
 			$UI/Commands/RightButton.hide()
+			$UI/Commands/RightCamButton.show()
+			$UI/Commands/LeftCamButton.show()
 			get_parent().get_node("CamMap").make_current()
 			map = false
 		else:
+			$UI/Commands/RightCamButton.hide()
+			$UI/Commands/LeftCamButton.hide()
 			$UI/ReloadButton.show()
 			$UI/LaunchButton.show()
 			$UI/Commands/LeftButton.show()
