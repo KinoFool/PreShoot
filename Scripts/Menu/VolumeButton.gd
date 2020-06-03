@@ -12,7 +12,7 @@ func _on_VolumeButton_pressed():
 		music_status = 0
 	else:
 		music_status = 1
-	if (music_status == 1):
+	if music_status == 1:
 		music.stream_paused = 0
 		self.texture_normal = sprite_on
 	else:

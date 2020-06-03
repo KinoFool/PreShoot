@@ -19,8 +19,11 @@ func set_max_level(value):
 	config.save(path)
 
 func increase_max_level():
-	config.set_value("Classic", "Level", cur_level + 1)
-	cur_level += 1
+	if get_tree().current_scene.filename == "res://Scenes/Maps/" + lvls[cur_level] + ".tscn":
+		config.set_value("Classic", "Level", cur_level + 1)
+		cur_level += 1
+	print("current level = ", get_tree().current_scene.filename)
+	print("last level = ", "res://Scenes/Maps/" + lvls[cur_level] + ".tscn")
 	config.save(path)
 
 func load_max_level():
