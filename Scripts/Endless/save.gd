@@ -4,7 +4,7 @@ onready var nw_score = get_node("Dog/Lives")
 onready var sfx = get_node("Camera2D/New_score")
 
 var record = -1
-var path = "res://save.prs"
+var path = "user://save.prs"
 var config = ConfigFile.new()
 var load_response = config.load(path)
 
@@ -17,6 +17,8 @@ func _physics_process(delta):
 	record = config.get_value("Endless", "Score")
 
 func save_best_score(score):
+	var file = File.new()
+	file.open(path, File.WRITE)
 	config.set_value("Endless", "Score", score)
 	config.save(path)
 	

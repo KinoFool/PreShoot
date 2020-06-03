@@ -17,10 +17,13 @@ _global_script_class_icons={
 
 config/name="PreShoot"
 run/main_scene="res://Scenes/Menu.tscn"
+config/use_custom_user_dir=true
 boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon.png"
 config/windows_native_icon="res://icon.png"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
 
 [display]
 
