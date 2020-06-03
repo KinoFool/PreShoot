@@ -112,6 +112,7 @@ position = Vector2( 1899.06, 930.756 )
 anchor_mode = 0
 limit_left = 0
 limit_top = 0
+limit_right = 2135
 limit_bottom = 1080
 editor_draw_limits = true
 script = ExtResource( 9 )
