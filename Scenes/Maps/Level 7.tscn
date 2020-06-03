@@ -165,10 +165,12 @@ editor_draw_limits = true
 
 [node name="Level" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 4 )
+autoplay = true
 bus = "Level"
 
 [node name="Fail" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 5 )
+autoplay = true
 bus = "SFX"
 
 [node name="Start position" type="Position2D" parent="."]

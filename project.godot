@@ -22,7 +22,6 @@ boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon.png"
 config/windows_native_icon="res://icon.png"
-config/auto_accept_quit=false
 config/quit_on_go_back=false
 
 [display]
@@ -65,16 +64,6 @@ ui_reload={
 ui_cam={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":86,"unicode":0,"echo":false,"script":null)
- ]
-}
-ui_left_cam={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
- ]
-}
-ui_right_cam={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
  ]
 }
 

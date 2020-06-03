@@ -60,10 +60,12 @@ script = ExtResource( 4 )
 
 [node name="Level" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 6 )
+autoplay = true
 bus = "Level"
 
 [node name="Fail" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 7 )
+autoplay = true
 bus = "SFX"
 
 [node name="Start position" type="Position2D" parent="."]
