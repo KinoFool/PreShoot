@@ -30,19 +30,55 @@ centered = false
 position = Vector2( 154, 1001 )
 
 [node name="crate2" parent="Crates" instance=ExtResource( 2 )]
-position = Vector2( 385, 847 )
+position = Vector2( 308, 847 )
 
 [node name="crate3" parent="Crates" instance=ExtResource( 2 )]
-position = Vector2( 693, 693 )
+position = Vector2( 616, 693 )
 
 [node name="crate4" parent="Crates" instance=ExtResource( 2 )]
-position = Vector2( 385, 539 )
+position = Vector2( 1001, 616 )
 
 [node name="crate5" parent="Crates" instance=ExtResource( 2 )]
-position = Vector2( 693, 385 )
+position = Vector2( 1309, 462 )
+
+[node name="crate7" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1155, 616 )
+
+[node name="crate8" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1386, 462 )
 
 [node name="crate6" parent="Crates" instance=ExtResource( 2 )]
-position = Vector2( 1155, 308 )
+position = Vector2( 1463, 462 )
+
+[node name="crate9" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1617, 462 )
+
+[node name="crate10" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1617, 539 )
+
+[node name="crate11" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1463, 539 )
+
+[node name="crate12" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1463, 616 )
+
+[node name="crate13" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1617, 616 )
+
+[node name="crate14" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1617, 693 )
+
+[node name="crate15" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1463, 693 )
+
+[node name="crate16" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1540, 770 )
+
+[node name="crate17" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1617, 770 )
+
+[node name="crate18" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1463, 770 )
 
 [node name="Sprite" parent="." instance=ExtResource( 3 )]
 position = Vector2( 149.357, 900.391 )
@@ -52,7 +88,7 @@ current = true
 zoom = Vector2( 0.5, 0.5 )
 limit_left = 0
 limit_top = 0
-limit_right = 1380
+limit_right = 2000
 limit_bottom = 1080
 editor_draw_limits = true
 
@@ -61,17 +97,19 @@ script = ExtResource( 4 )
 
 [node name="Level" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 6 )
+autoplay = true
 bus = "Level"
 
 [node name="Fail" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 7 )
+autoplay = true
 bus = "SFX"
 
 [node name="Start position" type="Position2D" parent="."]
 position = Vector2( 150.217, 832.175 )
 
 [node name="Target" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1169.69, 237.863 )
+position = Vector2( 1540, 699.762 )
 
 [node name="CamMap" type="Camera2D" parent="."]
 anchor_mode = 0
